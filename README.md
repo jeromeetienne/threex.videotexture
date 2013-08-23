@@ -8,7 +8,8 @@ with ```threex.videotexture.js```.
 You can even put the webcam in a texture with ```threex.webcamtexture.js```.
 If you need it you can try ```threex.audiovideotexture.js``` where the
 video is mapped on the texture and additionnally the sound of the video
-is handled via [web audio API](http://example.com).
+is handled via 
+[web audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html).
 Thus you can have localized sound, which is neat in 3d environment.
 
 Here is a [videotexture example](http://jeromeetienne.github.io/threex.htmlmixer/examples/videotexture.html) and its [source](https://github.com/jeromeetienne/threex.htmlmixer/blob/master/examples/videotexture.html).
@@ -75,7 +76,9 @@ Here is the detailled API:
 
 ## threex.webcamtexture.js
 
-It will read the webcam using [getUserMedia](http://example.com). The browser
+It will read the webcam using
+[getUserMedia](https://developer.mozilla.org/en-US/docs/Web/API/Navigator.getUserMedia).
+The browser
 will likely ask for permissions to the users.
 Let's see how to use it. You instanciate the texture itself.
 
