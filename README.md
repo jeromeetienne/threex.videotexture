@@ -21,7 +21,7 @@ It shows how to plug the video sound into the WebAudio API because you get local
 This is particularly useful in 3D.
 "Audio/Video" texture is a texture where the sound comes from the object3d on which 
 the texture is mapped.
-* Here is another [webcam example](http://jeromeetienne.github.io/threex.videotexture/examples/webcam.html) and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/webcamtexture.html).
+* Here is another [webcam example](http://jeromeetienne.github.io/threex.videotexture/examples/webcamtexture.html) and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/webcamtexture.html).
 It reads the webcam thru getUserMedia and put it in a texture.
 
 How To Install It
