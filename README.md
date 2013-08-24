@@ -45,7 +45,6 @@ then you add that in your html
 <script src="bower_components/threex.videotexture/threex.videotexture.js"></script>
 ```
 
-
 How To Use it
 =============
 
