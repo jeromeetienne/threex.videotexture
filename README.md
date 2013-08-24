@@ -12,9 +12,12 @@ is handled via
 [web audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html).
 Thus you can have localized sound, which is neat in 3d environment.
 
-Here is a [videotexture example](http://jeromeetienne.github.io/threex.htmlmixer/examples/videotexture.html) and its [source](https://github.com/jeromeetienne/threex.htmlmixer/blob/master/examples/videotexture.html).
-Here is a [audio videotexture example with WebAudio API](http://jeromeetienne.github.io/threex.htmlmixer/examples/audiovideotexture.html)and its [source](https://github.com/jeromeetienne/threex.htmlmixer/blob/master/examples/audiovideotexture.html).
-here is another [webcam example](http://jeromeetienne.github.io/threex.htmlmixer/examples/webcam.html) and its [source](https://github.com/jeromeetienne/threex.htmlmixer/blob/master/examples/webcam.html).
+
+Show Don't Tell
+===============
+* Here is a [videotexture example](http://jeromeetienne.github.io/threex.videotexture/examples/videotexture.html) and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/videotexture.html).
+* Here is a [audio videotexture example with WebAudio API](http://jeromeetienne.github.io/threex.videotexture/examples/audiovideotexture.html)and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/audiovideotexture.html).
+* here is another [webcam example](http://jeromeetienne.github.io/threex.videotexture/examples/webcam.html) and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/webcam.html).
 
 
 How To Install It
