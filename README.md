@@ -46,8 +46,8 @@ then you add that in your html
 ```
 
 
-How To Install it ?
-===================
+How To Use it
+=============
 
 ## threex.videotexture.js
 
