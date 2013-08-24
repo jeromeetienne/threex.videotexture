@@ -12,13 +12,17 @@ is handled via
 [web audio API](https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html).
 Thus you can have localized sound, which is neat in 3d environment.
 
-
 Show Don't Tell
 ===============
 * Here is a [videotexture example](http://jeromeetienne.github.io/threex.videotexture/examples/videotexture.html) and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/videotexture.html).
-* Here is a [audio videotexture example with WebAudio API](http://jeromeetienne.github.io/threex.videotexture/examples/audiovideotexture.html)and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/audiovideotexture.html).
-* here is another [webcam example](http://jeromeetienne.github.io/threex.videotexture/examples/webcam.html) and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/webcam.html).
-
+It read the video from a file via video dom element and display it in a texture
+* Here is a [audio/video texture example with WebAudio API](http://jeromeetienne.github.io/threex.videotexture/examples/audiovideotexture.html)and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/audiovideotexture.html).
+It shows how to plug the video sound into the WebAudio API because you get localised sounds.
+This is particularly useful in 3D.
+"Audio/Video" texture is a texture where the sound comes from the object3d on which 
+the texture is mapped.
+* Here is another [webcam example](http://jeromeetienne.github.io/threex.videotexture/examples/webcam.html) and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/webcamtexture.html).
+It reads the webcam thru getUserMedia and put it in a texture.
 
 How To Install It
 =================
