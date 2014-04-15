@@ -24,6 +24,10 @@ the texture is mapped.
 * Here is another [webcam example](http://jeromeetienne.github.io/threex.videotexture/examples/webcamtexture.html) and its [source](https://github.com/jeromeetienne/threex.videotexture/blob/master/examples/webcamtexture.html).
 It reads the webcam thru getUserMedia and put it in a texture.
 
+A Screenshot
+============
+[![screenshot](https://raw.githubusercontent.com/jeromeetienne/threex.videotexture/master/examples/images/screenshot-threex-videotexture-512x512.jpg)](http://jeromeetienne.github.io/threex.videotexture/examples/videotexture.html)
+
 How To Install It
 =================
 
