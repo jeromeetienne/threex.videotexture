@@ -11,10 +11,12 @@ THREEx.VideoTexture	= function(url){
 	// expose video as this.video
 	this.video	= video
 
+
 	// create the texture
 	var texture	= new THREE.Texture( video );
 	// expose texture as this.texture
 	this.texture	= texture
+
 
 	/**
 	 * update the object

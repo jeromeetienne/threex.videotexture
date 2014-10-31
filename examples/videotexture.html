@@ -1,8 +1,24 @@
 <!DOCTYPE html>
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <script src='vendor/three.js/build/three.min.js'></script>
 <script src='../threex.videotexture.js'></script>
-<body style='margin: 0px; background-color: #bbbbbb; overflow: hidden;'><script>
-	var renderer	= new THREE.WebGLRenderer();
+<div style='position: absolute; top: 0px; width: 100%;font-family:arial; font-weight: bolder; padding-top: 5px;'>
+	Boilerplate for <a href="http://threejs.org" target="_blank">three.js</a>
+	- works on desktop and mobile
+	<br/>
+	on IOS, start the video manually
+	<button onclick='onVideoPlayButtonClick()'>play</button>
+	<button onclick='onVideoPauseButtonClick()'>pause</button>
+</div><body style='margin: 0px; overflow: hidden; text-align:center;'><script>
+	//////////////////////////////////////////////////////////////////////////////////
+	//		Init
+	//////////////////////////////////////////////////////////////////////////////////
+
+	// init renderer
+	var renderer	= new THREE.WebGLRenderer({
+		antialias	: true,
+	});
+	renderer.setClearColor(new THREE.Color('lightgrey'), 1)
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 
@@ -14,9 +30,18 @@
 	//////////////////////////////////////////////////////////////////////////////////
 	//		add an object and make it move					//
 	//////////////////////////////////////////////////////////////////////////////////
-	
+
+	// find out which file formats i can read
+	var canPlayMp4	= document.createElement('video').canPlayType('video/mp4') !== '' ? true : false
+	var canPlayOgg	= document.createElement('video').canPlayType('video/ogg') !== '' ? true : false
+	if( canPlayMp4 ){
+		var url	= 'videos/sintel.mp4'
+	}else if( canPlayOgg ){
+		var url	= 'videos/sintel.ogv'
+	}else	alert('cant play mp4 or ogg')
+
 	// create the videoTexture
-	var videoTexture= new THREEx.VideoTexture('videos/sintel.ogv')
+	var videoTexture= new THREEx.VideoTexture(url)
 	var video	= videoTexture.video
 	updateFcts.push(function(delta, now){
 		videoTexture.update(delta, now)
@@ -33,20 +58,28 @@
 		mesh.rotation.x += 1 * delta;
 		mesh.rotation.y += 2 * delta;		
 	})
+
+
+	function onVideoPlayButtonClick(){
+		video.play()
+	}
+	function onVideoPauseButtonClick(){
+		video.pause()
+	}
 	
 	//////////////////////////////////////////////////////////////////////////////////
 	//		Camera Controls							//
 	//////////////////////////////////////////////////////////////////////////////////
-	var mouse	= {x : 0, y : 0}
-	document.addEventListener('mousemove', function(event){
-		mouse.x	= (event.clientX / window.innerWidth ) - 0.5
-		mouse.y	= (event.clientY / window.innerHeight) - 0.5
-	}, false)
-	updateFcts.push(function(delta, now){
-		camera.position.x += (mouse.x*5 - camera.position.x) * (delta*3)
-		camera.position.y += (mouse.y*5 - camera.position.y) * (delta*3)
-		camera.lookAt( scene.position )
-	})
+	// var mouse	= {x : 0, y : 0}
+	// document.addEventListener('mousemove', function(event){
+	// 	mouse.x	= (event.clientX / window.innerWidth ) - 0.5
+	// 	mouse.y	= (event.clientY / window.innerHeight) - 0.5
+	// }, false)
+	// updateFcts.push(function(delta, now){
+	// 	camera.position.x += (mouse.x*5 - camera.position.x) * (delta*3)
+	// 	camera.position.y += (mouse.y*5 - camera.position.y) * (delta*3)
+	// 	camera.lookAt( scene.position )
+	// })
 
 
 	//////////////////////////////////////////////////////////////////////////////////

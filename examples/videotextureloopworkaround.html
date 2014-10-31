@@ -16,6 +16,8 @@
 	//////////////////////////////////////////////////////////////////////////////////
 	
 	// trick to work around bugs in the video loop
+	// NOTE: this may not work because .currentTime and .duration are float and the equality would fail
+	// - possible other workaround from @pyalot: test if .currentTime is always increasing
 	updateFcts.push(function(delta, now){
 		var videoElement	= videoTexture.video
 		if( videoElement.currentTime === videoElement.duration ){
