@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <script src='vendor/three.js/build/three.min.js'></script>
+<script src='vendor/three.js/examples/js/libs/stats.min.js'></script>
 <script src='../threex.videotexture.js'></script>
 <div style='position: absolute; top: 0px; width: 100%;font-family:arial; font-weight: bolder; padding-top: 5px;'>
-	Boilerplate for <a href="http://threejs.org" target="_blank">three.js</a>
+	<a href='https://github.com/jeromeetienne/threex.videotexture' target="_blank">threex.videotexture</a>
+	for <a href="http://threejs.org" target="_blank">three.js</a>
 	- works on desktop and mobile
 	<br/>
 	on IOS, start the video manually
@@ -38,7 +40,7 @@
 		var url	= 'videos/sintel.mp4'
 	}else if( canPlayOgg ){
 		var url	= 'videos/sintel.ogv'
-	}else	alert('cant play mp4 or ogg')
+	}else	alert('cant play mp4 or ogv')
 
 	// create the videoTexture
 	var videoTexture= new THREEx.VideoTexture(url)
@@ -81,10 +83,21 @@
 	// 	camera.lookAt( scene.position )
 	// })
 
-
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the scene						//
 	//////////////////////////////////////////////////////////////////////////////////
+
+	// init Stats
+	var stats	= new Stats();
+	document.body.appendChild( stats.domElement );
+	stats.domElement.style.position = 'absolute';
+	stats.domElement.style.left	= '0px';
+	stats.domElement.style.bottom	= '0px';
+	updateFcts.push(function(){
+		stats.update()
+	})
+
+
 	updateFcts.push(function(){
 		renderer.render( scene, camera );		
 	})
