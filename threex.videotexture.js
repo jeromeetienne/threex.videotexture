@@ -1,33 +1,40 @@
 var THREEx = THREEx || {}
 
-THREEx.VideoTexture	= function(url){
-	// create the video element
-	var video	= document.createElement('video');
-	video.width	= 320;
-	video.height	= 240;
-	video.autoplay	= true;
-	video.loop	= true;
-	video.src	= url;
-	// expose video as this.video
-	this.video	= video
+THREEx.VideoTexture = function(url) {
+    var options = {
+        loop: true,
+        autoplay: true
+    };
+    if (customOptions.hasOwnProperty('loop')) options.loop = customOptions.loop;
+    if (customOptions.hasOwnProperty('autoplay')) options.autoplay = customOptions.autoplay;
 
-	// create the texture
-	var texture	= new THREE.Texture( video );
-	// expose texture as this.texture
-	this.texture	= texture
+    // create the video element
+    var video = document.createElement('video');
+    video.width = 320;
+    video.height = 240;
+    video.autoplay = true;
+    video.loop = true;
+    video.src = url;
+    // expose video as this.video
+    this.video = video
 
-	/**
-	 * update the object
-	 */
-	this.update	= function(){
-		if( video.readyState !== video.HAVE_ENOUGH_DATA )	return;
-		texture.needsUpdate	= true;		
-	}
+    // create the texture
+    var texture = new THREE.Texture(video);
+    // expose texture as this.texture
+    this.texture = texture
 
-	/**
-	 * destroy the object
-	 */
-	this.destroy	= function(){
-		video.pause()
-	}
+    /**
+     * update the object
+     */
+    this.update = function() {
+        if (video.readyState !== video.HAVE_ENOUGH_DATA) return;
+        texture.needsUpdate = true;
+    }
+
+    /**
+     * destroy the object
+     */
+    this.destroy = function() {
+        video.pause()
+    }
 }
