@@ -3,6 +3,7 @@
 <script src='vendor/three.js/build/three.min.js'></script>
 <script src='vendor/three.js/examples/js/libs/stats.min.js'></script>
 <script src='../threex.videotexture.js'></script>
+<script src='http://bfred-it.github.io/iphone-inline-video/dist/iphone-inline-video.browser.js'></script>
 <div style='position: absolute; top: 0px; width: 100%;font-family:arial; font-weight: bolder; padding-top: 5px;'>
 	<a href='https://github.com/jeromeetienne/threex.videotexture' target="_blank">threex.videotexture</a>
 	for <a href="http://threejs.org" target="_blank">three.js</a>
@@ -45,6 +46,7 @@
 	// create the videoTexture
 	var videoTexture= new THREEx.VideoTexture(url)
 	var video	= videoTexture.video
+	makeVideoPlayableInline(video);
 	updateFcts.push(function(delta, now){
 		videoTexture.update(delta, now)
 	})
